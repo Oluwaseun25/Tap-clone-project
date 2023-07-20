@@ -8,17 +8,19 @@
     <script type="text/javascript" src="paper-full.js"></script>
     <script type="text/paperscript" canvas ="myCanvas">
 
-        
+        var circles = []
             
             function onKeyDown(event) {
                
                 var maxSpace = new Point(view.size.width, view.size.height)
                 var randomPoint = Point.random()
                 var point = maxSpace * randomPoint
+                var newCircle = new Path.Circle(point, 400)
 
-                new Path.Circle(point, 10).fillColor = 'hotpink';
-                new Path.Circle(point, 10).strokeColor = 'yellow';
+                newCircle.fillColor = 'orange'
+                <!-- newCircle.strokeColor = 'orange' -->
 
+                circles.push(newCircle)
                 console.log(view.size)
             }
 
@@ -29,8 +31,13 @@
                 animatedCircle.strokeColor = "blue";
 
                 function onFrame(event){
+
+                for(var i = 0; i < circles.length; i++) {
+                    circles[i].fillColor.hue +=1
+                    circles[i].scale(.9);
+                }
                     animatedCircle.fillColor.hue +=1  
-                    animatedCircle.scale(.9);
+                    animatedCircle.scale(.95);
                 }
                     
                 
