@@ -1,5 +1,21 @@
 /* nb=-+65%  */
 
+/* <!-- for(var x = 0; x < 1000; x+=100 ){
+    for(var y = 0; y < 1000; y+=100 ){
+    new Path.Circle(new Point(x, y), 10).fillColor = 'hotpink';
+         "nested loops for creating multiple circles on a canvas
+
+
+         var path = new Path.Circle({
+                    
+                    center: new Point(point)
+                    radius: 10
+                    strokeColor: red'
+                    fillColor: 'hotpink'
+                })
+}
+} --> */
+
 canvas{
     width: 100%;
     background-color: black;

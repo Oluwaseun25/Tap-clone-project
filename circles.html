@@ -6,16 +6,37 @@
     <title>Tap clone </title>
     <link rel="stylesheet" href="circles.css">
     <script type="text/javascript" src="paper-full.js"></script>
+    <script type="text/paperscript" canvas ="myCanvas">
 
-
-    <script type="text/paperscript" canvas="myCanvas">
-    for(var x = 0; x < 1000; x+=100 ){
-        for(var y = 0; y < 1000; y+=100 ){
-        var myCircle = new Path.Circle(new Point(x, y), 10);
-            myCircle.fillColor = 'hotpink';
-    }
-    }
         
+            
+            function onKeyDown(event) {
+               
+                var maxSpace = new Point(view.size.width, view.size.height)
+                var randomPoint = Point.random()
+                var point = maxSpace * randomPoint
+
+                new Path.Circle(point, 10).fillColor = 'hotpink';
+                new Path.Circle(point, 10).strokeColor = 'yellow';
+
+                console.log(view.size)
+            }
+
+
+            var animatedCircle = new Path.Circle(new Point(view.center),40);
+
+                animatedCircle.fillColor = "yellow";
+                animatedCircle.strokeColor = "blue";
+
+                function onFrame(event){
+                    animatedCircle.fillColor.hue +=1  
+                    animatedCircle.scale(.9);
+                }
+                    
+                
+
+    
+
     </script>
 </head>
 <body>
