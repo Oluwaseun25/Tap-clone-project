@@ -6,12 +6,25 @@
     <title>Tap clone </title>
     <link rel="stylesheet" href="circles.css">
     <script type="text/javascript" src="paper-full.js"></script>
+    <script type="text/javascript" src="howler.js"></script>
     <script type="text/paperscript" canvas ="myCanvas">
+
+        var keyData = {
+            a = {
+               color: "#8114ac" 
+               sound = new Howl({
+                src: ['sounds/bubbles.mp3']
+              });
+            };
+
+            s
+        }
 
         var circles = []
             
             function onKeyDown(event) {
-               
+
+               sound.play();
                 var maxSpace = new Point(view.size.width, view.size.height)
                 var randomPoint = Point.random()
                 var point = maxSpace * randomPoint
