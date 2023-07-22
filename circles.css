@@ -1,4 +1,4 @@
-/* nb=-+65%  */
+/* nb=-+65%   patatap clone*/
 
 /* <!-- for(var x = 0; x < 1000; x+=100 ){
     for(var y = 0; y < 1000; y+=100 ){
@@ -25,4 +25,5 @@ canvas{
 body, html{
     height: 100%;
     margin: 0;
+    color:#8114ac
 }
