@@ -10,32 +10,38 @@
     <script type="text/paperscript" canvas ="myCanvas">
 
         var keyData = {
-            a = {
-               color: "#8114ac" 
-               sound = new Howl({
-                src: ['sounds/bubbles.mp3']
-              });
+            a: {
+               color: "#8114ac", 
+               sound: new Howl({
+                 src: ['sounds/bubbles.mp3']
+              })
             };
 
-            s
+            s: {
+               color: "#8114ac",
+               sound: new Howl({
+               src: ['sounds/clay.mp3']
+              });
+            }
         }
 
         var circles = []
             
             function onKeyDown(event) {
-
-               sound.play();
+            if(keyDown[event.key]) {
                 var maxSpace = new Point(view.size.width, view.size.height)
                 var randomPoint = Point.random()
                 var point = maxSpace * randomPoint
                 var newCircle = new Path.Circle(point, 400)
 
-                newCircle.fillColor = 'orange'
+                newCircle.fillColor = keyData[event.key].color
+                keyData[event.key].sound.play();
                 <!-- newCircle.strokeColor = 'orange' -->
 
                 circles.push(newCircle)
                 console.log(view.size)
             }
+        }
 
 
             var animatedCircle = new Path.Circle(new Point(view.center),40);
