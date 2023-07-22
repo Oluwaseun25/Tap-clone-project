@@ -13,18 +13,18 @@
             a: {
                color: "#8114ac", 
                sound: new Howl({
-                 src: ['sounds/bubbles.mp3']
+                src: ['sounds/bubbles.mp3']
               })
-            };
+            },
+            
 
             s: {
                color: "#8114ac",
                sound: new Howl({
                src: ['sounds/clay.mp3']
-              });
+              })
             }
-        }
-
+        };
         var circles = []
             
             function onKeyDown(event) {
@@ -36,7 +36,7 @@
 
                 newCircle.fillColor = keyData[event.key].color
                 keyData[event.key].sound.play();
-                <!-- newCircle.strokeColor = 'orange' -->
+                // newCircle.strokeColor = 'orange'
 
                 circles.push(newCircle)
                 console.log(view.size)
